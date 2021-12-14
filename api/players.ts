@@ -3,8 +3,8 @@ import {
   VercelResponse
 } from "@vercel/node";
 
-import { playerDetails } from './data/PlayerDetails';
-import { playerOverviews } from './data/PlayerOverviews';
+import { playerDetails } from '../data/PlayerDetails';
+import { playerOverviews } from '../data/PlayerOverviews';
 
 export default (request: VercelRequest, response: VercelResponse) => {
   const { query } = request;
