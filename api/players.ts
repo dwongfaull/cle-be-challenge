@@ -21,7 +21,7 @@ export default (request: VercelRequest, response: VercelResponse) => {
       const res = {
         message: `Player with playerId = ${query.playerId} not found!`;
       }
-      response.status(400).json()
+      response.status(400).json(res);
     }
   } else {
     // Otherwise, return full list of player overviews

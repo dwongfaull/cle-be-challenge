@@ -12,7 +12,7 @@ export default (request: VercelRequest, response: VercelResponse) => {
     const playerPitches = pitches.filter(el => el.pitcherId.toString() === query.playerId);
     // If performance is a concern, we could filter this at startup instead of in response to a query,
     // but that would mean we'd have to restart the service to push new data.
-    if (pitches.length > 0) {
+    if (playerPitches.length > 0) {
       // wrap it as per previous API
       const wrappedPlayer = {
         pitches: playerPitches
