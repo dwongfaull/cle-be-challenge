@@ -8,11 +8,9 @@ import { playerOverviews } from '../data/PlayerOverviews';
 
 export default (request: VercelRequest, response: VercelResponse) => {
   const { query } = request;
-  console.log(query);
   if (query && query.playerId) {
-  console.log(query.playerId);
     // If playerId is passed as query parameter, return player details
-    const playerDetail = playerDetails.filter(el => el.playerId === query.playerId);
+    const playerDetail = playerDetails.filter(el => el.playerId.toString() === query.playerId);
     // wrap it as per previous API
     const wrappedPlayer = {
       playerDetail
