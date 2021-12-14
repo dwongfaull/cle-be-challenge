@@ -8,16 +8,13 @@ import { playerOverviews } from '../data/PlayerOverviews';
 
 export default (request: VercelRequest, response: VercelResponse) => {
   const { query } = request;
-  console.log(query);
   if (query && query.playerId) {
-  console.log(playerDetails);
     // If playerId is passed as query parameter, return player details
-    const playerDetail = playerDetails.filter(el => el.playerId === playerId);
+    const playerDetail = playerDetails.filter(el => el.playerId === query.playerId);
     // wrap it as per previous API
     const wrappedPlayer = {
       playerDetail
     };
-    console.log(wrappedPlayer);
     response.status(200).json(wrappedPlayer);
   } else {
     // Otherwise, return full list of player overviews
@@ -26,7 +23,6 @@ export default (request: VercelRequest, response: VercelResponse) => {
     const wrappedOverview = {
       players: playerOverviews
     };
-    console.log(wrappedOverview);
     response.status(200).json(wrappedOverview);
   }
 };
