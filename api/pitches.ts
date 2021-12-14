@@ -18,6 +18,6 @@ export default (request: VercelRequest, response: VercelResponse) => {
     };
     response.status(200).json(wrappedPlayer);
   } else {
-    response.status(400).body('Must pass in playerId as a query param!');
+    response.status(400).send('Must pass in playerId as a query param!');
   }
 };
